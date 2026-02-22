@@ -1,0 +1,143 @@
+        /* توحيد التصميم مع صفحة الفلاتر */
+        header nav.container {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1900px; /* الحجم الكبير الذي طلبته */
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .services-main-hero {
+            margin-top: 120px; 
+            padding: 80px 40px;
+            text-align: center;
+            background: #1e293b; 
+            border-radius: 30px; 
+            border: 1px solid #334155;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .services-main-hero h1 { 
+            font-size: clamp(1.8rem, 5vw, 3rem); /* حجم مرن: لا يقل عن 1.8 ولا يزيد عن 3 */
+            color: var(--main-color); 
+            margin-bottom: 20px; 
+            word-wrap: break-word;
+        }
+
+        .services-main-hero p { font-size: 1.1rem; color: #cbd5e1; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+
+        /* شبكة عرض واجهات النظام - 6 كروت في الصف */
+        .web-grid {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px; 
+            padding: 50px 2%; 
+        }
+
+        .web-card {
+            background: var(--second-bg-color);
+            border-radius: 20px;
+            border: 1px solid #334155;
+            padding: 15px; 
+            text-align: center;
+            transition: 0.4s ease;
+            width: calc(16.66% - 13px); 
+            min-width: 250px; /* لضمان وضوح واجهات الويب */
+            flex-shrink: 0; 
+        }
+
+        .web-card:hover {
+            border-color: var(--main-color);
+            transform: translateY(-10px);
+        }
+
+        .browser-mockup {
+            width: 100%;
+            height: 160px;
+            background: #0f172a;
+            border: 4px solid #334155;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .browser-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-info h3 { color: var(--main-color); font-size: 1.1rem; margin-bottom: 8px; }
+        .app-info p { color: #94a3b8; font-size: 0.85rem; line-height: 1.4; }
+
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to left, transparent, var(--main-color), transparent);
+            width: 60%;
+            margin: 40px auto 20px;
+        }
+        .work-title {
+            color: #fff; font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 30px;
+        }
+
+        .btn-back {
+            padding: 8px 18px;
+            text-decoration: none;
+            border: 1px solid var(--main-color);
+            border-radius: 8px;
+            color: var(--main-color);
+            display: flex;
+            align-items: center;
+            gap: 10px; /* مسافة بين العناصر */
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+
+        .btn-back i { display: none; font-size: 1.2rem; }
+        .btn-back .arrow-icon { display: none; } /* السهم مخفي في الشاشات الكبيرة */
+        .btn-back i:not(.arrow-icon) { display: none; } /* أيقونة الخدمات مخفية في الشاشات الكبيرة */
+
+        /* تأكد من أن المسافة بين السهم والأيقونة مضبوطة في الموبايل */
+        @media (max-width: 600px) {
+            .btn-back { 
+                gap: 6px; /* تقليل المسافة قليلاً لتناسب الموبايل */
+                padding: 8px 10px; 
+            }
+            .btn-back span { display: none; } 
+            .btn-back .arrow-icon { display: block; font-size: 0.85rem; } 
+            .btn-back i:not(.arrow-icon) { display: block; font-size: 1.1rem; }
+        }
+
+
+        /* الميديا كويري لصفحة الويب */
+        @media (max-width: 1400px) { .web-card { width: calc(25% - 12px); } }
+        @media (max-width: 992px) { .web-card { width: calc(33.33% - 12px); } }
+        @media (max-width: 768px) { .web-card { width: calc(50% - 10px); } }
+        @media (max-width: 480px) { .web-card { width: 100%; } }
+        @media (max-width: 768px) {
+            .services-main-hero { padding: 40px 20px; margin-top: 100px; }
+            .services-main-hero p { font-size: 1rem; }
+        }
+
+        
+        /* Lightbox & Overlay */
+        .options-overlay, .viewer { display: none; position: fixed; z-index: 10001; top: 0; left: 0; width: 100%; height: 100%; justify-content: center; align-items: center; }
+        .options-overlay { background: rgba(0, 0, 0, 0.85); }
+        .viewer { background: #000; z-index: 10002; flex-direction: column; }
+        .options-card { background: #1e293b; padding: 30px; border-radius: 20px; border: 1px solid var(--main-color); text-align: center; width: 90%; max-width: 350px; }
+        .opt-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px; margin-bottom: 10px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-view { background: var(--main-color); color: white; }
+        .btn-down { background: #10b981; color: white; }
+        .btn-close-opt { background: #ef4444; color: white; }
+        .viewer img { max-width: 90%; max-height: 80vh; border: 2px solid var(--main-color); }
+        .back-btn { margin-top: 20px; background: var(--main-color); color: white; padding: 10px 30px; border: none; border-radius: 5px; cursor: pointer; }

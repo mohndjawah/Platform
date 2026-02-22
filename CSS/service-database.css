@@ -1,0 +1,119 @@
+       /* التنسيقات الأساسية المتطابقة مع صفحاتك */
+        header nav.container {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1900px; /* الحجم الكبير الذي طلبته */
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        /* تنسيق الزر كما طلبته (سهم + أيقونة) */
+        .btn-back {
+            padding: 8px 18px;
+            text-decoration: none;
+            border: 1px solid var(--main-color);
+            border-radius: 8px;
+            color: var(--main-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-back .arrow-icon, .btn-back i:not(.arrow-icon) { display: none; }
+
+        @media (max-width: 600px) {
+            .btn-back span { display: none; }
+            .btn-back .arrow-icon { display: block; font-size: 0.85rem; }
+            .btn-back i:not(.arrow-icon) { display: block; font-size: 1.1rem; }
+        }
+
+        /* تصميم الهيرو (نفس أسلوب services-main-hero) */
+        .db-hero {
+            margin-top: 120px; 
+            padding: 80px 40px;
+            text-align: center;
+            background: #1e293b; 
+            border-radius: 30px; 
+            border: 1px solid #334155;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .db-hero h1 { 
+            font-size: clamp(1.8rem, 5vw, 3rem); 
+            color: var(--main-color); 
+            margin-bottom: 20px; 
+        }
+
+        .db-hero p { 
+            font-size: 1.1rem; 
+            color: #cbd5e1; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            line-height: 1.8; 
+        }
+
+        /* شبكة عرض قواعد البيانات */
+        .db-grid {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+            padding: 50px 2%; 
+        }
+
+        .db-card {
+            background: var(--second-bg-color);
+            border-radius: 20px;
+            border: 1px solid #334155;
+            padding: 25px;
+            text-align: center;
+            transition: 0.4s ease;
+            width: calc(33.33% - 20px);
+            min-width: 300px;
+        }
+
+        .db-card:hover {
+            border-color: var(--main-color);
+            transform: translateY(-10px);
+        }
+
+        .db-icon {
+            font-size: 3rem;
+            color: var(--main-color);
+            margin-bottom: 15px;
+        }
+
+        /* محاكاة علاقات البيانات (Entity Relationship) */
+        .db-schema {
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: right;
+            border-right: 4px solid var(--main-color);
+            font-family: monospace;
+        }
+
+        .db-schema code { color: #38bdf8; display: block; margin-bottom: 5px; font-size: 0.9rem;}
+        .db-schema code span { color: #94a3b8; }
+
+        /* تذييل الصفحة (نفس الـ minimal-footer) */
+        .minimal-footer { margin-top: 50px; padding: 20px 0; }
+        .footer-line {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to left, transparent, var(--main-color), transparent);
+            margin-bottom: 20px;
+        }
+        .copy-right { text-align: center; color: #94a3b8; }
+
+        @media (max-width: 992px) { .db-card { width: calc(50% - 20px); } }
+        @media (max-width: 600px) { .db-card { width: 100%; } }
+    

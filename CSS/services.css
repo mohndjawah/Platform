@@ -1,0 +1,128 @@
+       /* التعديل الأول: عكس أماكن العناصر في الهيدر */
+        header nav.container {
+            display: flex;
+            flex-direction: row-reverse; 
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* التعديل الثاني: جعل قسم الـ Hero كصندوق مستقل بحواف ولون مختلف */
+        .services-main-hero {
+            margin-top: 120px; 
+            padding: 80px 40px;
+            text-align: center;
+            background: #1e293b; 
+            border-radius: 30px; 
+            border: 1px solid #334155;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .services-main-hero h1 { 
+            font-size: 3rem; 
+            color: var(--main-color); 
+            margin-bottom: 20px; 
+        }
+        .services-main-hero p { 
+            font-size: 1.1rem; 
+            color: #cbd5e1; 
+            max-width: 700px; 
+            margin: 0 auto; 
+            line-height: 1.8;
+        }
+
+        /* تنسيق خط الفاصل والنص الذي تحته */
+        .divider-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to left, transparent, #334155, transparent);
+            width: 80%;
+            margin: 0 auto 20px;
+        }
+        .work-title {
+            color: var(--main-color);
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* تنسيق الكروت */
+        .service-category-card {
+            background: var(--second-bg-color);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid #334155;
+            transition: 0.3s;
+            text-align: center;
+            padding-left: 2ch;
+            padding-right: 2ch;
+        }
+        
+        .service-category-card:hover { 
+            border-color: var(--main-color); 
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+        }
+        .service-category-card i {
+            font-size: 50px;
+            color: var(--main-color);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .service-category-card h2 { color: var(--main-color); margin-bottom: 5px; }
+        .service-category-card p { color: #94a3b8; margin-bottom: 25px; }
+        
+        .btn-primary-link {
+            display: inline-block;
+            background: var(--main-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .services-grid-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 0 60px; 
+        }
+
+        /* Footer */
+        .minimal-footer { 
+            background: var(--bg-color); 
+            padding: 40px 0; 
+            text-align: center; 
+        }
+
+        .footer-line { 
+            border: 0; 
+            height: 1px; 
+            background: #334155; 
+            margin-bottom: 20px; 
+        }
+
+        .copy-right span {
+            color: var(--main-color);
+            font-weight: bold;
+        }
+
+        /* Media Query */
+        @media (max-width: 768px) {
+            .services-main-hero h1 { font-size: 2rem; }
+            .services-main-hero { margin-top: 100px; margin-left: 15px; margin-right: 15px; padding: 40px 20px; }
+            .service-category-card { margin-left: 15px; margin-right: 15px; }
+            .section-divider { width: 90%; }
+            .work-title { font-size: 1.4rem; }
+        }
+
+        @media (max-width: 480px) {
+            .btn-secondary span { display: none; }
+            .btn-secondary::before { content: "\f015 \2190"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+            .btn-secondary { padding: 8px 15px !important; }
+        }

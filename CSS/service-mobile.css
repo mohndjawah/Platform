@@ -1,0 +1,170 @@
+        /* التعديل الأول: عكس الهيدر */
+        header nav.container {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* التعديل الثاني: تنسيق الـ Hero */
+        .services-main-hero {
+            margin-top: 120px; 
+            padding: 80px 40px;
+            text-align: center;
+            background: #1e293b; 
+            border-radius: 30px; 
+            border: 1px solid #334155;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .services-main-hero h1 { 
+            font-size: 3rem; 
+            color: var(--main-color); 
+            margin-bottom: 20px; 
+        }
+        .services-main-hero p { 
+            font-size: 1.1rem; 
+            color: #cbd5e1; 
+            max-width: 700px; 
+            margin: 0 auto; 
+            line-height: 1.8;
+        }
+
+        /* تعديل شبكة البطاقات لظهور 5 في الصف الواحد */
+        .mobile-grid {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: flex-start; /* التراص من الطرف */
+            gap: 20px; 
+            padding: 50px 2%; 
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .mobile-card {
+            background: var(--second-bg-color);
+            border-radius: 25px;
+            border: 1px solid #334155;
+            padding: 20px 2px; 
+            text-align: center;
+            transition: 0.4s ease;
+            /* حساب العرض ليكون 5 كروت مع خصم المسافات بينهم */
+            width: calc(20% - 16px); 
+            min-width: 180px;
+            flex-shrink: 0; 
+        }
+
+        .mobile-card:hover {
+            border-color: var(--main-color);
+            transform: translateY(-10px);
+        }
+
+        .phone-mockup {
+            width: 150px;
+            height: 300px;
+            background: #000;
+            border: 6px solid #334155;
+            border-radius: 30px;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .phone-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .app-info h3 { color: var(--main-color); font-size: 1rem; margin-bottom: 10px; }
+
+        /* نافذة الخيارات */
+        .options-overlay {
+            display: none;
+            position: fixed;
+            z-index: 10001;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center; align-items: center;
+        }
+        .options-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--main-color);
+            text-align: center;
+            width: 90%; max-width: 350px;
+        }
+        .opt-btn {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            width: 100%; padding: 12px; margin-bottom: 10px;
+            border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .btn-view { background: var(--main-color); color: white; }
+        .btn-down { background: #10b981; color: white; }
+        .btn-close-opt { background: #ef4444; color: white; }
+
+        /* نافذة العرض */
+        .viewer {
+            display: none;
+            position: fixed;
+            z-index: 10002;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            justify-content: center; align-items: center;
+            flex-direction: column;
+        }
+        .viewer img { max-height: 80vh; border-radius: 10px; border: 2px solid var(--main-color); }
+        .back-btn { margin-top: 20px; background: var(--main-color); color: white; padding: 10px 30px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+        /* الفوتر */
+        .minimal-footer { background: var(--bg-color); padding: 40px 0; text-align: center; }
+        .footer-line { border: 0; height: 1px; background: #334155; margin-bottom: 20px; }
+        .copy-right span { color: var(--main-color); font-weight: bold; }
+
+        /* الخط العلوي (Divider) وتنسيق العنوان */
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to left, transparent, var(--main-color), transparent);
+            width: 60%;
+            margin: 40px auto 20px;
+        }
+        .work-title {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+        /* تعديل حجم الحاوية الرئيسية لتصبح 1900 بكسل */
+        .container {
+           max-width: 2000px; /* الحجم الذي طلبته */
+           width: 95%;        /* لضمان وجود هامش بسيط على الشاشات الأصغر من 1900 */
+           margin: 0 auto;    /* لتوسيط المحتوى في منتصف الشاشة */
+        }
+
+        /* الميديا كويري لضبط عدد الكروت حسب الشاشة */
+        @media (max-width: 1100px) {
+            .mobile-card { width: calc(25% - 15px); } /* 4 كروت */
+        }
+        @media (max-width: 900px) {
+            .mobile-card { width: calc(33.33% - 14px); } /* 3 كروت */
+        }
+        @media (max-width: 650px) {
+            .mobile-card { width: calc(50% - 10px); } /* كرتين */
+            .work-title { font-size: 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .mobile-card { width: 100%; max-width: 280px; margin: 0 auto; } /* كرت واحد */
+            .btn-secondary span { display: none; }
+            .btn-secondary::before { 
+                content: "\f00a \00a0 \f060"; 
+                font-family: "Font Awesome 6 Free"; 
+                font-weight: 900; 
+            }
+        }
