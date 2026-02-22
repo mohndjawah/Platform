@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيقات الموبايل | Mohannad Jawah</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/service-mobile.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">MOHND_<span>_2005</span></div>
+            <a href="services.html" class="btn-secondary" style="padding: 8px 20px; text-decoration: none; border: 1px solid var(--main-color); border-radius: 5px; color: var(--main-color);">
+                <span>العودة للخدمات</span>
+            </a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="services-main-hero">
+            <h1>مشروع المفتاح العقاري</h1>
+            <p>هو نظام إلكتروني ذكي يسمح للبائعين بإضافة وإدارة الإعلانات وللمشترين بتصفح العروض والبحث بسهولة ، تُسهل البيع والشراء لكل العقارات والسيارات والمباني والشقق والاراضي ، يوفر لك الامان والموثوقية وحماية الحسابات والبيانات وتضمن صفقات موثوقة واّمنة لكل المستخدمين.</p>
+        </section>
+    </div>
+
+    <hr class="section-divider">
+    <div class="work-title">واجهات النظام</div>
+
+    <main class="container">
+        <div class="mobile-grid">
+            <div class="mobile-card">
+                <div class="phone-mockup" onclick="showOptions('..//Platform/img/Flutter/انشاء حساب - معدل.jfif')">
+                    <img src="..//Platform/img/Flutter/انشاء حساب - معدل.jfif">
+                </div>
+                <div class="app-info"><h3>إنشاء حساب</h3></div>
+            </div>
+            <div class="mobile-card">
+                <div class="phone-mockup" onclick="showOptions('..//Platform/img/Flutter/تسجيل الدخول - معدل.jfif')">
+                    <img src="..//Platform/img/Flutter/تسجيل الدخول - معدل.jfif">
+                </div>
+                <div class="app-info"><h3>تسجيل الدخول</h3></div>
+            </div>
+            <div class="mobile-card">
+                <div class="phone-mockup" onclick="showOptions('..//Platform/img/Flutter/الرئيسية.jfif')">
+                    <img src="..//Platform/img/Flutter/الرئيسية.jfif">
+                </div>
+                <div class="app-info"><h3>الرئيسية</h3></div>
+            </div>
+            <div class="mobile-card">
+                <div class="phone-mockup" onclick="showOptions('..//Platform/img/Flutter/اضافة اعلان 0.jfif')">
+                    <img src="..//Platform/img/Flutter/اضافة اعلان 0.jfif">
+                </div>
+                <div class="app-info"><h3>إضافة اعلان - الفئة 1</h3></div>
+            </div>
+            <div class="mobile-card">
+                <div class="phone-mockup" onclick="showOptions('..//Platform/img/Flutter/اضافة اعلان 2.jfif')">
+                    <img src="..//Platform/img/Flutter/اضافة اعلان 2.jfif">
+                </div>
+                <div class="app-info"><h3>إضافة اعلان - الفئة 2</h3></div>
+            </div>
+            <div class="mobile-card">
+                <div class="phone-mockup" onclick="showOptions('..//Platform/img/Flutter/اضافة اعلان 3.jfif')">
+                    <img src="..//Platform/img/Flutter/اضافة اعلان 3.jfif">
+                </div>
+                <div class="app-info"><h3>إضافة اعلان - الفئة 3</h3></div>
+            </div>
+            <div class="mobile-card">
+                <div class="phone-mockup" onclick="showOptions('..//Platform/img/Flutter/عرض الاعلان.jfif')">
+                    <img src="..//Platform/img/Flutter/عرض الاعلان.jfif">
+                </div>
+                <div class="app-info"><h3>عرض تفاصيل الاعلان</h3></div>
+            </div>
+            <div class="mobile-card">
+                <div class="phone-mockup" onclick="showOptions('..//Platform/img/Flutter/حذف الاعلان.jfif')">
+                    <img src="..//Platform/img/Flutter/حذف الاعلان.jfif">
+                </div>
+                <div class="app-info"><h3>تعديل + حذف الاعلان</h3></div>
+            </div>
+            <div class="mobile-card">
+                <div class="phone-mockup" onclick="showOptions('..//Platform/img/Flutter/الفلترة.jfif')">
+                    <img src="..//Platform/img/Flutter/الفلترة.jfif">
+                </div>
+                      <div class="app-info"><h3>الفلترة</h3></div>
+            </div>
+            <div class="mobile-card">
+                <div class="phone-mockup" onclick="showOptions('..//Platform/img/Flutter/بياناتي.jfif')">
+                    <img src="..//Platform/img/Flutter/بياناتي.jfif">
+                </div>
+                <div class="app-info"><h3>بياناتي</h3></div>
+            </div>
+        </div>
+    </main>
+
+    <div class="options-overlay" id="optionsOverlay">
+        <div class="options-card">
+            <h4>ماذا تريد أن تفعل بالصورة؟</h4><br>
+            <button class="opt-btn btn-view" id="optView"><i class="fas fa-eye"></i> عرض الصورة</button>
+            <button class="opt-btn btn-down" id="optDown"><i class="fas fa-download"></i> تحميل الصورة</button>
+            <button class="opt-btn btn-close-opt" onclick="closeOptions()"><i class="fas fa-times"></i> إغلاق</button>
+        </div>
+    </div>
+
+    <div class="viewer" id="imgViewer">
+        <img src="" id="fullImg">
+        <button class="back-btn" onclick="closeViewer()">العودة للمعرض</button>
+    </div>
+
+    <footer class="minimal-footer">
+        <div class="container">
+            <hr class="footer-line">
+            <b><p class="copy-right">جميع الحقوق محفوظة &copy; 2025 - <span>MOHANNAD JAWAH</span></p></b>
+        </div>
+    </footer>
+
+    <script>
+        const optionsOverlay = document.getElementById('optionsOverlay');
+        const imgViewer = document.getElementById('imgViewer');
+        const fullImg = document.getElementById('fullImg');
+        const optView = document.getElementById('optView');
+        const optDown = document.getElementById('optDown');
+        
+        let currentImgSrc = "";
+
+        function showOptions(src) {
+            currentImgSrc = src;
+            optionsOverlay.style.display = 'flex';
+        }
+
+        function closeOptions() {
+            optionsOverlay.style.display = 'none';
+        }
+
+        optView.onclick = () => {
+            fullImg.src = currentImgSrc;
+            imgViewer.style.display = 'flex';
+            closeOptions();
+        };
+
+        function closeViewer() {
+            imgViewer.style.display = 'none';
+        }
+
+        optDown.onclick = () => {
+            if(!currentImgSrc) return;
+            const link = document.createElement('a');
+            link.href = currentImgSrc;
+            const fileName = currentImgSrc.substring(currentImgSrc.lastIndexOf('/') + 1);
+            link.download = fileName || 'project-image.jpg';
+            link.target = '_self'; 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            closeOptions();
+        };
+
+        window.onclick = (e) => {
+            if (e.target == optionsOverlay) closeOptions();
+        };
+    </script>
+</body>
+</html>

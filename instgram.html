@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مولد اليوزرات المخصص</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 1rem;
+        }
+        #result {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 20px 0;
+            letter-spacing: 2px;
+            font-family: monospace;
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        label {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>مولد يوزرات مخصص</h2>
+    
+    <label>أدخل الحروف والرموز التي تريدها:</label>
+    <input type="text" id="charPool" value="1234567890">
+    <!-- <input type="text" id="charPool" value="abcdefghijklmnopqrstuvwxyz0123456789._"> -->
+    
+    <div id="result">----</div>
+    
+    <button onclick="generateCustomUser()">توليد يوزر رباعي عشوائي</button>
+</div>
+
+<script>
+    function generateCustomUser() {
+        // جلب السلسلة النصية التي أدخلها المستخدم
+        const pool = document.getElementById('charPool').value;
+        const resultDisplay = document.getElementById('result');
+        let finalUser = '';
+
+        if (pool.length < 1) {
+            alert("الرجاء إدخال رموز في الحقل!");
+            return;
+        }
+
+        // توليد 4 خانات عشوائية
+        // for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 11; i++) {
+            const randomIndex = Math.floor(Math.random() * pool.length);
+            finalUser += pool.charAt(randomIndex);
+        }
+
+        // عرض النتيجة
+        resultDisplay.innerText = finalUser;
+    }
+</script>
+
+</body>
+</html>
